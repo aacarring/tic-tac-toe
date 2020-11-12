@@ -4,13 +4,13 @@ export default class GameView {
         this.root.innerHTML = `
             <div class="header">
                 <div class="header_turn">
-                    X's turn
+                    X's Turn
                 </div>
                 <div class="header_status">
-                    In progress
+                    In Progress
                 </div>
                 <button type="button" class="header_restart">
-                    <i class="material-icons">Refresh</i>
+                    <i class="material-icons">refresh</i>
                 </button>
             </div>
         `;
