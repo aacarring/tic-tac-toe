@@ -35,3 +35,28 @@
     background: none;
     cursor: pointer;
 }
+.board {
+    display: grid;
+    background: #ccc;
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.board_tile {
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-family: cursive;
+    color: #222;
+}
+.board_tile:hover {
+    background: #eee;
+}
+.board_tile-winner {
+    color: green;
+}
