@@ -7,7 +7,15 @@ export default class Game {
         this.turn = this.turn === "X" ? "O" : "X";
     }
     makeMove(i) {
-        if (this.board[i]) return;
+        if (!this.isInProgress()) {
+            return;
+        }
+        if (this.board[i]) {
+            return;
+        }
+        if (!this.findWinningCombination()) {
+            return;
+        }
         this.board[i] = this.turn;
         this.nextTurn();
     }
@@ -24,6 +32,13 @@ export default class Game {
         ];
         for (let combo of winningCombinations) {
             const [a, b, c] = combo;
+            if (this.board[a] && (this.board[a] === this.board[b]) && (this.board[a] === this.board[c])) {
+                return combo;
+            } 
         }
+        return null;
+    }
+    isInProgress() {
+        return !this.findWinningCombination() && this.board.includes(null);
     }
 }
